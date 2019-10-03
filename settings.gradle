@@ -1,0 +1,2 @@
+include ':app', ':lib-extensions'
+rootProject.name='kotlin-extensions'
