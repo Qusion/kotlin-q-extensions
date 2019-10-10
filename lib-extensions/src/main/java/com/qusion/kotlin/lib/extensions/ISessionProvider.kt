@@ -6,7 +6,7 @@ package com.qusion.kotlin.lib.extensions
  * */
 interface ISessionProvider {
 
-    fun get(): String
+    fun get(): String?
 
     fun set(sid: String)
 
