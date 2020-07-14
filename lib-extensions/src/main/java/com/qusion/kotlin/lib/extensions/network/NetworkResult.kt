@@ -6,7 +6,7 @@ package com.qusion.kotlin.lib.extensions.network
  */
 sealed class NetworkResult<out T : Any> {
     data class Success<out T : Any>(val value: T) : NetworkResult<T>()
-    data class Error(val cause: Exception? = null, val code: Int? = null) : NetworkResult<Nothing>()
+    data class Error(val cause: Throwable? = null) : NetworkResult<Nothing>()
 }
 
 
@@ -27,7 +27,7 @@ inline fun <T : Any> NetworkResult<T>.onError(block: (response: NetworkResult.Er
 }
 
 
-inline fun <reified T: Any> safeApiCall(block: () -> NetworkResult<T>): NetworkResult<T> {
+inline fun <reified T : Any> safeApiCall(block: () -> NetworkResult<T>): NetworkResult<T> {
     return try {
         block()
     } catch (e: Exception) {

@@ -3,7 +3,4 @@ ext {
     build_tools_version = '29.0.0'
     min_sdk_version = 23
     target_sdk_version = 29
-
-    //Coroutines
-    coroutines_version = '1.3.2'
 }
